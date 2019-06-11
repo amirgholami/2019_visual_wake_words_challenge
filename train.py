@@ -15,13 +15,15 @@ np.random.seed(0)
 parser = argparse.ArgumentParser()
 parser.add_argument('--batch_size', type = int, default = 256)
 parser.add_argument('--epoch', type = int, default = 30)
-parser.add_argument('--model', type = str, default = 'test_model', 
-                    help = 'test_model, resnet18, mobilenetx0.5, mobilenetv2x0.25, shufflenetx0.75g3, sqnxt1.0_23v5, sqntv1.1, dlax46c, fdmobilenetx0.5 supported')
+parser.add_argument('--lr', type = float, default = 1e-4)
+
+parser.add_argument('--batch_size', type = int, default = 256)
+parser.add_argument('--model', type = str, default = 'shufflenetv2x0.5', 
+                    help = 'shufflenetv2x0.5 supported')
 parser.add_argument('--load-model', type = str, default = 'None',
                     help = 'the path of the model to be loaded')
-parser.add_argument('--preprocess', type = str, default = 'resize', 
-                    help = 'collate, crop, resize or fivecrop')
-parser.add_argument('--lr', type = float, default = 1e-4)
+parser.add_argument('--preprocess', type = str, default = 'randaffine')
+
 args = parser.parse_args()
 
 
